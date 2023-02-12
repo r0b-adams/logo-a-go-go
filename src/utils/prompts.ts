@@ -3,6 +3,11 @@ import { Circle, Square, Triangle } from "../lib";
 import { validateColor, validateMonogram } from "../utils";
 import { colorChoices } from "./colors";
 
+enum COLOR_ACTION {
+  SELECT = "Select from list",
+  ENTER = "Enter color",
+}
+
 export const enterMonogram = () => {
   return io.prompt([
     {
@@ -20,21 +25,22 @@ export const selectColor = (name: "text_color" | "fill_color") => {
       name: "choice",
       message: "Would you like to enter a color or choose one from the list?",
       type: "list",
-      choices: ["Enter color", "Select from list"],
+      choices: [COLOR_ACTION.SELECT, COLOR_ACTION.ENTER],
     },
     {
-      when: answers => answers.choice === "Enter color",
+      when: answers => answers.choice === COLOR_ACTION.ENTER,
       message: "Please enter a color",
       name,
       type: "input",
       validate: validateColor,
     },
     {
-      when: answers => answers.choice === "Select from list",
+      when: answers => answers.choice === COLOR_ACTION.SELECT,
       message: "Select a color",
       name,
       type: "list",
       choices: colorChoices,
+      validate: validateColor,
     },
   ]);
 };
