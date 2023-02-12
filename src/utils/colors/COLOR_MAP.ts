@@ -118,7 +118,7 @@ export const COLOR_MAP: { [key: string]: string } = {
   "royal blue": "#4169e1",
   "saddle brown": "#8b4513",
   salmon: "#fa8072",
-  " ": "#f4a460",
+  "sandy brown": "#f4a460",
   "sea green": "#2e8b57",
   "sea shell": "#fff5ee",
   sienna: "#a0522d",
