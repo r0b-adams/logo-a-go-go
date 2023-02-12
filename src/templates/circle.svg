@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" >
+  <circle cx='100' cy='100' r="100"  fill='yellow'/>
+  <text
+    xmlns="http://www.w3.org/2000/svg"
+    x='100'
+    y='125'
+    font-size="75"
+    text-anchor="middle"
+    fill="white">
+      SVG
+  </text>
+</svg>
