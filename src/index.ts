@@ -17,8 +17,8 @@ const main = async () => {
   const { shape } = await selectShape();
   const { fill_color } = await selectColor("fill_color");
 
-  const template = new shape(text, text_color, fill_color).createSvgTemplate();
-  fs.writeFileSync(`${DIST}/logo.svg`, template);
+  const svg = new shape(text, text_color, fill_color).createSvg();
+  fs.writeFileSync(`${DIST}/logo.svg`, svg);
   console.log("logo generated!");
 };
 
