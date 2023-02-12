@@ -1,7 +1,7 @@
 export class Shape {
   constructor(private text: string, public text_color: string) {}
 
-  public createSvgTemplate() {
+  public createSvg() {
     return `
 <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px">
   ${this.render()}

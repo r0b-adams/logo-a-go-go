@@ -5,7 +5,7 @@ export class Square extends Shape {
 
   constructor(text: string, text_color: string, shape_color: string) {
     super(text, text_color);
-    this.shape_color = shape_color;
+    this.shape_color = shape_color.trim();
   }
 
   render() {
