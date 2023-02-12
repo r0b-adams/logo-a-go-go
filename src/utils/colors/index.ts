@@ -4,7 +4,7 @@ type HexTuple = [string, string, string];
 type RgbTuple = [number, number, number];
 
 // ANSI format escape codes
-export const FORMAT = {
+const FORMAT = {
   RESET: "\x1b[0m",
   BOLD: "\x1b[1m",
   FAINT: "\x1b[2m",
@@ -44,8 +44,8 @@ const generateColorChoices = () => {
     const hexStr = COLOR_MAP[key];
     const rgbHex = getHexadecimal(hexStr);
     const [R, G, B] = getRGB(rgbHex);
-    const COLOR = "\x1b[38;2;" + R + ";" + G + ";" + B + "m";
-    const name = [COLOR, key, FORMAT.RESET].join(""); // wrap text in ANSI color codes
+    const COLOR_CODE = "\x1b[38;2;" + R + ";" + G + ";" + B + "m";
+    const name = [COLOR_CODE, key, FORMAT.RESET].join(""); // wrap text in ANSI color codes
     return { name, value: hexStr };
   });
 };
