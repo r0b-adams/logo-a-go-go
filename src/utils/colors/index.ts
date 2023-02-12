@@ -21,7 +21,7 @@ const getRGB = (hexes: HexTuple): RgbTuple => {
 };
 
 // returns tuple of 2 digit hexadecimal values
-const getHexadecimal = (hexStr: string): HexTuple => {
+const getHexadecimalRGB = (hexStr: string): HexTuple => {
   let R, G, B;
   const parsed = hexStr[0] === "#" ? hexStr.substring(1) : hexStr;
   switch (parsed.length) {
@@ -42,11 +42,11 @@ const getHexadecimal = (hexStr: string): HexTuple => {
 const generateColorChoices = () => {
   return Object.keys(COLOR_MAP).map(key => {
     const hexStr = COLOR_MAP[key];
-    const rgbHex = getHexadecimal(hexStr);
+    const rgbHex = getHexadecimalRGB(hexStr);
     const [R, G, B] = getRGB(rgbHex);
     const COLOR_CODE = "\x1b[38;2;" + R + ";" + G + ";" + B + "m";
-    const name = [COLOR_CODE, key, FORMAT.RESET].join(""); // wrap text in ANSI color codes
-    return { name, value: hexStr };
+    const colorizedChoice = COLOR_CODE + key + FORMAT.RESET; // wrap text in ANSI color codes
+    return { name: colorizedChoice, value: hexStr };
   });
 };
 
