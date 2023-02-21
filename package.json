@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Robert Adams",
   "scripts": {
-    "start": " ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "test": "jest"
   },
   "dependencies": {
     "inquirer": "^8.2.4"
