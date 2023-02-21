@@ -8,3 +8,6 @@ describe("Circle", () => {
     expect(circle instanceof Shape).toBe(true);
   });
 });
+
+// TODO: check instantiation with given color
+// TODO: check render method returns expected string
