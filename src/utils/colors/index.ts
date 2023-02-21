@@ -52,4 +52,4 @@ const generateColorChoices = () => {
 
 const colorChoices = generateColorChoices();
 
-export { colorChoices };
+export { colorChoices, COLOR_MAP };
