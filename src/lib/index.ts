@@ -1,3 +1,4 @@
-export { Circle } from "./Circle";
-export { Square } from "./Square";
-export { Triangle } from "./Triangle";
+import SVG from "./SVG";
+import { Shape, Circle, Square, Triangle } from "./Shapes";
+
+export { SVG, Shape, Circle, Square, Triangle };

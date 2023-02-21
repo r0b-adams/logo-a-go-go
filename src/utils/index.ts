@@ -1,2 +1,3 @@
-export { COLOR_MAP } from "./colors/COLOR_MAP";
-export { validateColor, validateMonogram } from "./validators";
+export { colorChoices, COLOR_MAP } from "./colors";
+export { validateColor, validateMonogram } from "../App/validators";
+export { createOutputDir } from "./createOutputDir";
