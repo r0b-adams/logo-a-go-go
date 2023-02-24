@@ -6,7 +6,8 @@
   "author": "Robert Adams",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "coverage": "jest --collectCoverage --"
   },
   "dependencies": {
     "inquirer": "^8.2.4"
