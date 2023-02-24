@@ -1,4 +1,4 @@
-import { COLOR_MAP } from "../utils/colors/COLOR_MAP";
+import { COLOR_MAP } from "./colors/COLOR_MAP";
 
 // #YYY, #YYYYYY
 export const VALID_HEX = /(^#[0-9A-F]{3}$)|(^#[0-9A-F]{6}$)/im;
