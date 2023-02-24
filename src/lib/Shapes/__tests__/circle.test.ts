@@ -8,14 +8,14 @@ describe("Circle", () => {
     expect(circle instanceof Shape).toBe(true);
   });
 
-  it("should instantiate with the given color", () => {
+  it("is instantiated with the given color", () => {
     const CIRCLE_COLOR = "chartreuse";
     const circle = new Circle(CIRCLE_COLOR);
 
     expect(circle.color).toBe(CIRCLE_COLOR);
   });
 
-  it("should render a circle element with the given color", () => {
+  it("renders a circle element with the given color", () => {
     const CIRCLE_COLOR = "chartreuse";
     const circle = new Circle(CIRCLE_COLOR);
     const circleEl = circle.render();
