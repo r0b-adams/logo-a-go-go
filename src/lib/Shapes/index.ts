@@ -16,7 +16,7 @@ export class Circle extends Shape {
   }
 
   public render() {
-    return `<circle cx='100' cy='100' r="100"  fill='${this.color}'/>`;
+    return `<circle cx='100' cy='100' r="100" fill='${this.color}'/>`;
   }
 }
 
