@@ -25,9 +25,9 @@ jobs:
             ${{ runner.os }}-
 
       # Install required deps for action
-      - name: Install Dependencies
-        run: npm install
+      - name: Install dependencies
+        run: yarn
 
       # Finally, run our tests
-      - name: Run the tests
-        run: npm test
+      - name: Run tests
+        run: yarn test
