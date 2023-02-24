@@ -1,0 +1,7 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="300px"
+  height="200px">
+  <rect width="200" height="200" fill='#008b8b'/>
+  <text xmlns="http://www.w3.org/2000/svg" x='100' y='125' font-size="75" text-anchor="middle" fill="#ff6347">KEK</text>
+</svg>
