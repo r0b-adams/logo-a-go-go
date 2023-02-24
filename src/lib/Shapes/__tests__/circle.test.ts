@@ -19,7 +19,7 @@ describe("Circle", () => {
     const CIRCLE_COLOR = "chartreuse";
     const circle = new Circle(CIRCLE_COLOR);
     const circleEl = circle.render();
-    const testEl = `<circle cx='100' cy='100' r="100"  fill='${CIRCLE_COLOR}'/>`;
+    const testEl = `<circle cx='100' cy='100' r="100" fill='${CIRCLE_COLOR}'/>`;
 
     expect(circleEl).toEqual(testEl);
   });
