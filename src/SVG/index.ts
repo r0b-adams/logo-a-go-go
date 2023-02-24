@@ -1,10 +1,14 @@
-import { Shape } from "../Shapes";
+import { Shape } from "../lib/Shapes";
 
 export default class SVG {
   private width: number = 300;
   private height: number = 200;
   protected text?: string;
   protected shape?: Shape;
+
+  constructor(shape?: Shape) {
+    this.shape = shape;
+  }
 
   public getText() {
     return this.text;
@@ -23,21 +27,26 @@ export default class SVG {
   }
 
   public render() {
-    if (!this.shape) {
-      throw new Error("SVG shape has not been set");
-    }
+    return this.generate().trim();
+  }
+
+  private generate() {
     if (!this.text) {
       throw new Error("SVG text has not been set");
     }
-
+    if (!this.shape) {
+      throw new Error("SVG shape has not been set");
+    }
     return `
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="${this.width}px"
-      height="${this.height}px">
-      ${this.shape.render()}
-      ${this.text}
-    </svg>
-    `;
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="${this.width}px"
+  height="${this.height}px">
+  ${this.shape.render()}
+  ${this.text}
+</svg>
+
+`;
   }
 }
