@@ -3,17 +3,6 @@ import { COLOR_MAP } from "./COLOR_MAP";
 type HexTuple = [string, string, string];
 type RgbTuple = [number, number, number];
 
-// ANSI format escape codes
-const FORMAT = {
-  RESET: "\x1b[0m",
-  BOLD: "\x1b[1m",
-  FAINT: "\x1b[2m",
-  ITALIC: "\x1b[3m",
-  UNDERLINE: "\x1b[4m",
-  INVERT: "\x1b[7m", //swap fg & bg
-  HIDDEN: "\x1b[8m",
-};
-
 // returns tuple of RGB ints from a hexadecimal color
 const getRGB = (hexes: HexTuple): RgbTuple => {
   const [R, G, B] = hexes.map(hex => parseInt(hex, 16));
@@ -39,6 +28,13 @@ const getHexadecimalRGB = (hexStr: string): HexTuple => {
   }
 };
 
+const getAnsiColorCode = (hex: string) => {
+  const rgbHex = getHexadecimalRGB(hex);
+  const [R, G, B] = getRGB(rgbHex);
+  const COLOR_CODE = "\x1b[38;2;" + R + ";" + G + ";" + B + "m";
+  return COLOR_CODE;
+};
+
 const generateColorChoices = () => {
   return Object.keys(COLOR_MAP).map(key => {
     const hexStr = COLOR_MAP[key];
@@ -48,6 +44,18 @@ const generateColorChoices = () => {
     const colorizedChoice = COLOR_CODE + key + FORMAT.RESET; // wrap text in ANSI color codes
     return { name: colorizedChoice, value: hexStr };
   });
+};
+
+// ANSI format escape codes
+export const FORMAT = {
+  RESET: "\x1b[0m",
+  BOLD: "\x1b[1m",
+  FAINT: "\x1b[2m",
+  ITALIC: "\x1b[3m",
+  UNDERLINE: "\x1b[4m",
+  INVERT: "\x1b[7m", //swap fg & bg
+  HIDDEN: "\x1b[8m",
+  GREEN: `${getAnsiColorCode("#008000")}`,
 };
 
 const colorChoices = generateColorChoices();
